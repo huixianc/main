@@ -17,6 +17,9 @@ import seedu.nova.model.person.Name;
 import seedu.nova.model.person.Person;
 import seedu.nova.model.person.Phone;
 import seedu.nova.model.person.Remark;
+import seedu.nova.model.plan.Plan;
+import seedu.nova.model.plan.StudyPlan;
+import seedu.nova.model.plan.Task;
 import seedu.nova.model.progresstracker.Ip;
 import seedu.nova.model.progresstracker.ProgressTracker;
 import seedu.nova.model.progresstracker.PtNote;
@@ -112,11 +115,15 @@ public class SampleDataUtil {
         };
     }
 
+    public static Task[] getSampleTasks() {
+        return new Task[]{};
+    }
+
     public static Nova getSampleNova() {
         AddressBook ab = new AddressBook();
         Schedule sampleSchedule = new Schedule(SAMPLE_START_DATE, SAMPLE_END_DATE);
-
         ProgressTracker sampleProgressTracker = new ProgressTracker();
+        Plan samplePlan = new StudyPlan();
 
         for (Person samplePerson : getSamplePersons()) {
             ab.addPerson(samplePerson);
@@ -131,12 +138,16 @@ public class SampleDataUtil {
             sampleSchedule.addEvent(sampleEvent);
         }
 
+        for (Task sampleTask : getSampleTasks()) {
+            samplePlan.addTask(sampleTask);
+        }
+
         Nova nova = new Nova();
         VersionedAddressBook addressBook = new VersionedAddressBook(ab);
         nova.setAddressBookNova(addressBook);
-
         nova.setProgressTrackerNova(sampleProgressTracker);
         nova.setScheduleNova(sampleSchedule);
+        nova.setStudyPlan(samplePlan);
 
         return nova;
     }

@@ -98,3 +98,32 @@ include::../UserGuide.adoc[tag=ProgressTracker]
 
 == Contributions to the Developer Guide
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
+
+include::../DeveloperGuide.adoc[tag=UI]
+include::../DeveloperGuide.adoc[tag=listPt]
+
+[width="59%",cols="22%,<23%,<25%,<30%",options="header",]
+|=======================================================================
+|Priority |As a ... |I can ... |So that I ...
+
+|`* * *` |forgetful student |keep track of my project tasks |make sure all my project tasks are completed on time
+
+|`* * *` |student |mark tasks as done |track how many tasks I have finished
+
+|`* * *` |student |add notes to project tasks |keep track of details regarding the tasks
+
+|`* * *` |student |add project tasks |keep track of those project tasks
+
+|`* * *` |student |delete project tasks |remove unwanted tasks from the tracker
+
+|`* *` |lazy student |edit project tasks |can correct mistakes made to task descriptions with little effort
+
+|`* *` |lazy student |edit notes to project tasks |can correct mistakes made to notes with little effort
+
+|=======================================================================
+
+include::../DeveloperGuide.adoc[tag=UseCasesPt]
+
+include::../DeveloperGuide.adoc[tag=shutdown]
+
+include::../DeveloperGuide.adoc[tag=Pt]

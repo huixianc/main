@@ -101,7 +101,15 @@ public class MainApp extends Application {
             initialData = nova;
         } catch (IOException e) {
             logger.warning("Problem while reading from the file. Will be starting with an empty data file");
-            initialData = new Nova();
+
+            Nova nova = new Nova();
+            nova.setAddressBookNova(new VersionedAddressBook(new AddressBook()));
+            nova.setProgressTrackerNova(new ProgressTracker());
+            nova.setScheduleNova(new Schedule(LocalDate.of(2020, 1, 13),
+                    LocalDate.of(2020, 5, 3)));
+            nova.setStudyPlan(new StudyPlan());
+
+            initialData = nova;
         }
 
         return new ModelManager(initialData, userPrefs);

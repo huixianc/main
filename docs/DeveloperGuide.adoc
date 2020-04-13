@@ -614,6 +614,12 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |student |add project tasks |keep track of those project tasks
 
+|`* * *` |student |delete project tasks |remove unwanted tasks from the tracker
+
+|`* *` |lazy student |edit project tasks |can correct mistakes made to task descriptions with little effort
+
+|`* *` |lazy student |edit notes to project tasks |can correct mistakes made to notes with little effort
+
 // tag::viewScheduleUserStories[]
 
 |`* * *` |Student | View my schedule for a day| Know the flow of events on that day
@@ -958,7 +964,7 @@ Use case ends.
 Use case ends.
 
 [discrete]
-=== Use case 14: User edits a task.
+=== Use case 14: Edit a task.
 
 *MSS*
 
@@ -975,7 +981,7 @@ Use case ends.
 +
 Use case ends.
 
-=== Use case 15: User deletes a task.
+=== Use case 15: Delete a task.
 
 *MSS*
 
@@ -994,7 +1000,7 @@ Use case ends.
 Use case ends.
 
 [discrete]
-=== Use case 16: User lists tasks in a week of a project.
+=== Use case 16: List tasks in a week of a project.
 
 *MSS*
 
@@ -1012,7 +1018,7 @@ Use case ends.
 Use case ends.
 
 [discrete]
-=== Use case 17: User set an added task as done.
+=== Use case 17: Set an added task as done.
 
 *MSS*
 
@@ -1029,6 +1035,7 @@ Use case ends.
 +
 Use case ends.
 
+[discrete]
 === Use case 18: Add notes to a task in progress tracker
 
 *MSS*
@@ -1047,7 +1054,7 @@ Use case ends.
 Use case ends.
 
 [discrete]
-=== Use case 19: User edits a note.
+=== Use case 19: Edit a note.
 
 *MSS*
 
@@ -1065,7 +1072,7 @@ Use case ends.
 Use case ends.
 
 [discrete]
-=== Use case 20: User deletes a note.
+=== Use case 20: Delete a note.
 
 *MSS*
 
@@ -1235,7 +1242,7 @@ Given below are instructions to test the app manually.
 [NOTE]
 These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
 
-=== Launch and Shutdown
+=== Launch
 
 . Initial launch
 
@@ -1248,6 +1255,14 @@ These instructions only provide a starting point for testers to work on; testers
 .. Resize the window to an optimum size. Move the window to a different location. Close the window.
 .. Re-launch the app by double-clicking the jar file. +
    Expected: The most recent window size and location is retained.
+
+//tag::shutdown[]
+=== Shutdown
+. Exiting the application
+
+.. Enter `exit` in the command line.
+
+//end::shutdown[]
 
 === Deleting a person in Address Book
 
@@ -1262,3 +1277,34 @@ These instructions only provide a starting point for testers to work on; testers
 .. Other incorrect delete commands to try: `delete`, `delete i\x` (where x is larger than the list size), `delete x` (where x is number or letter)
    Expected: Similar to previous.
 
+//tag::Pt[]
+=== Adding a project task in Progress Tracker
+
+. Enter progress tracker mode via `nav progresstracker`
+. Adding a project task
+
+.. Test case: `add p\ip w\1 d\new task` +
+Expected: New project task with description "new task" is added to IP project week 1. Message showing successful execution is shown.
+
+.. Test case: `add p\ip w\14 d\new task` +
+Expected: No new project task is added. Error details shown in the status message.
+
+.. Other incorrect add commands to try: `add`, `add p\ppp w\1 d\new task`. +
+Expected: Similar to previous.
+
+
+=== Saving data
+
+. Dealing with corrupted data file
+
+.. Edit the Nova data file to contain invalid data. +
+Example: Adding a @ to a week in a ptTask.
+
+.. Run the application. The application should start with an empty Nova data file.
+
+. Dealing with missing data file
+
+.. Delete the current Nova data file.
+
+.. Run the application. The application should start with a sample Nova data file with pre-included data.
+//end::Pt[]

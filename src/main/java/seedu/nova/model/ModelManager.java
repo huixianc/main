@@ -124,6 +124,11 @@ public class ModelManager implements Model {
         return modeEnum.name();
     }
 
+    @Override
+    public void setModeEnum(Mode mode, ModeEnum modeEnum) {
+        mode.setModeEnum(modeEnum);
+    }
+
     //=========== AddressBook ================================================================================
     @Override
     public ReadOnlyAddressBook getAddressBook() {
@@ -317,6 +322,7 @@ public class ModelManager implements Model {
 
     @Override
     public boolean deleteTask(Task task) {
+        task.getEventAfter(LocalDate.now()).forEach(schedule::deleteEvent);
         return plan.deleteTask(task);
     }
 

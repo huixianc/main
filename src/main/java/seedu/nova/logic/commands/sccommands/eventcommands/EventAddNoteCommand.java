@@ -6,7 +6,9 @@ import static seedu.nova.logic.parser.CliSyntax.PREFIX_INDEX;
 import static seedu.nova.logic.parser.CliSyntax.PREFIX_TIME;
 
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
+import seedu.nova.commons.core.LogsCenter;
 import seedu.nova.commons.core.index.Index;
 import seedu.nova.logic.commands.Command;
 import seedu.nova.logic.commands.CommandResult;
@@ -38,6 +40,8 @@ public class EventAddNoteCommand extends Command {
     public static final String MESSAGE_INVALID_INDEX = "Invalid index - that event does not exist.";
     public static final String MESSAGE_INVALID_DATE = "That date does not fall within the semester.";
 
+    private final Logger logger = LogsCenter.getLogger(getClass());
+
     private String desc;
     private LocalDate date;
     private Index index;
@@ -54,6 +58,8 @@ public class EventAddNoteCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
+        logger.info("executing add note command for event at: \n" + "date: " + date + ", index: " + index);
+
         requireNonNull(model);
 
         if (!model.isWithinSem(date)) {
