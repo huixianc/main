@@ -17,7 +17,7 @@ endif::[]
 
 :repoURL: https://github.com/AY1920S2-CS2103T-F10-3/main
 
-By: `Team CS2103T-F10-3`      Since: `Apr 2020`      Licence: `MIT`
+By: `CS2103T-F10-3`      Since: `Apr 2020`      Licence: `MIT`
 
 [[Intro]]
 // tag::intro[]
@@ -751,11 +751,15 @@ Format: +
 [NOTE]
 ====
 * Only `ip` and `tp` projects are available and are not case-sensitive
+* There are only weeks 1 to 13 in each project
+* When multiple same tags are keyed, the last tag will be taken as the input
+====
+
+[WARNING]
+====
 * `add` is case-sensitive
 * `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
 * `[task description]` cannot be empty
-* There are only weeks 1 to 13 in each project
-* When multiple same tags are keyed, the last tag will be taken as the input.
 ====
 
 Example: +
@@ -780,10 +784,14 @@ Format: +
 [NOTE]
 ====
 * Only `ip` and `tp` projects are available and are not case-sensitive
+* There are only weeks 1 to 13 in each project
+* When multiple same tags are keyed, the last tag will be taken as the input
+====
+
+[WARNING]
+====
 * `list` is case-sensitive
 * `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
-* There are only weeks 1 to 13 in each project
-* When multiple same tags are keyed, the last tag will be taken as the input.
 ====
 
 Example: +
@@ -807,10 +815,15 @@ Format: `delete p\[ip/tp] w\[week number] t\[task number]`
 [NOTE]
 ====
 * Only `ip` and `tp` projects are available and are not case-sensitive
-* `delete` is case-sensitive
-* `[week number]` and `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
 * There are only weeks 1 to 13 in each project
-* When multiple same tags are keyed, the last tag will be taken as the input.
+* When multiple same tags are keyed, the last tag will be taken as the input
+====
+
+[WARNING]
+====
+* `delete` is case-sensitive
+* `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
 ====
 
 Example: +
@@ -836,9 +849,15 @@ Format: +
 ====
 * Only `ip` and `tp` projects are available and are not case-sensitive
 * There are only weeks 1 to 13 in each project
-* When multiple same tags are keyed, the last tag will be taken as the input.
+* When multiple same tags are keyed, the last tag will be taken as the input
+* Calling `done` on a done task will set it to not done and vice versa
+====
+
+[WARNING]
+====
 * `done` is case-sensitive
-* `[week number]` and `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
 ====
 
 Example: +
@@ -862,12 +881,17 @@ Format: +
 
 [NOTE]
 ====
-* `addNote` is case-sensitive
 * Only `ip` and `tp` projects are available and are not case-sensitive
-* `[week number]` and `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
-* `[note]` cannot be empty
 * There are only weeks 1 to 13 in each project
-* When multiple same tags are keyed, the last tag will be taken as the input.
+* When multiple same tags are keyed, the last tag will be taken as the input
+====
+
+[WARNING]
+====
+* `addNote` is case-sensitive
+* `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[note]` cannot be empty
 ====
 
 Example: +
@@ -891,12 +915,17 @@ Format: +
 
 [NOTE]
 ====
-* `editNote` is case-sensitive
 * Only `ip` and `tp` projects are available and are not case-sensitive
-* `[week number]` and `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
-* `[new note]` cannot be empty
 * There are only weeks 1 to 13 in each project
 * When multiple same tags are keyed, the last tag will be taken as the input.
+====
+
+[WARNING]
+====
+* `editNote` is case-sensitive
+* `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[new note]` cannot be empty
 ====
 
 Example: +
@@ -920,11 +949,16 @@ Format: +
 
 [NOTE]
 ====
-* `deleteNote` is case-sensitive
 * Only `ip` and `tp` projects are available and are not case-sensitive
-* `[week number]` and `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
 * There are only weeks 1 to 13 in each project
 * When multiple same tags are keyed, the last tag will be taken as the input.
+====
+
+[WARNING]
+====
+* `deleteNote` is case-sensitive
+* `[week number]` must be a positive integer (E.g. 1, 2, 3, …)
+* `[task number]` must be a positive integer (E.g. 1, 2, 3, …)
 ====
 
 Example: +
@@ -988,9 +1022,9 @@ into your schedule
 .7+| Progress Tracker
 | add p\[ip/tp] w\[week number] d\[task description] | Adds a task to the specified week and project
 | list p\[ip/tp] w\[week number] | Lists the tasks that have been added to the specified week and project
-| delete delete p\[ip/tp] w\[week number] t\[task number] | Deletes the specified task
+| delete p\[ip/tp] w\[week number] t\[task number] | Deletes the specified task
 | done p\[ip/tp] w\[week number] t\[task number] | Sets the status of the specified task to done/undone
-| addNote p\[ip/tp] w\[week number] t\[task number] d\note | Adds a note to the specified task
+| addNote p\[ip/tp] w\[week number] t\[task number] d\[note] | Adds a note to the specified task
 | editNote p\[ip/tp] w\[week number] t\[task number] d\[new note] | Overwrites the existing note with the new note
 | deleteNote p\[ip/tp] w\[week number] t\[task number] | Deletes the note in the specified task
 |=========================================================
