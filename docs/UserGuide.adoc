@@ -840,7 +840,7 @@ _[.small]#Fig 5.5.3: Display message after entering `delete p\ip w\3 t\1`#_
 <<Top, [Back to Top]>>
 
 ==== Complete Tasks: `done`
-You can mark tasks in the progress tracker as done.
+You can mark tasks in the progress tracker as done/ not done.
 
 Format: +
 `done p\[ip/tp] w\[week number] t\[task number]`
@@ -976,7 +976,7 @@ _[.small]#Fig 5.5.7: Display message after entering `deleteNote p\ip w\3 t\1`#_
 <<Top, [Back to Top]>>
 
 [[Summary]]
-== Command Summary (Terence)
+== Command Summary (Terence and Bryan)
 
 [%autowidth,cols="<.^,<.^,<.^",options="header"]
 |=========================================================

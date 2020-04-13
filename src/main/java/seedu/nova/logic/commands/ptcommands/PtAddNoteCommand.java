@@ -25,6 +25,7 @@ public class PtAddNoteCommand extends Command {
             + "Parameters: "
             + PREFIX_PROJECT + "PROJECT "
             + PREFIX_WEEK + "WEEK "
+            + PREFIX_TASK + "TASK "
             + PREFIX_DESC + "NOTE \n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_PROJECT + "Ip "
